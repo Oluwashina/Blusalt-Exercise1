@@ -21,25 +21,12 @@ function App() {
   const [cycle, setCycle] = useState(0);
 
   useEffect(() => {
-    const tenSecondsInterval = setInterval(() => {
-      setCycle((cycle) => (cycle + 1) % 4);
-    }, 10000);
+    const interval = setInterval(() => {
+      setCycle((cycle) => (cycle + 1) % 3);
+    }, cycle === 0 ? 10000 : 5000);
 
-    const fiveSecondsInterval = setInterval(() => {
-      setCycle((cycle) => (cycle + 1) % 4);
-    }, 5000);
-
-    // Clear the tenSecondsInterval after 20 seconds to switch to the 5-second interval.
-    setTimeout(() => {
-      clearInterval(tenSecondsInterval);
-    }, 10000);
-
-    return () => {
-      clearInterval(fiveSecondsInterval);
-      clearInterval(tenSecondsInterval);
-    };
-
-  }, []);
+    return () => clearInterval(interval);
+  }, [cycle]);
 
 
   const handleReset = () => {

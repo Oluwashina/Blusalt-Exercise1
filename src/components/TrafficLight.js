@@ -57,11 +57,11 @@ const TrafficLight = ({cycle}) => {
 
   const isStreetAGreen = cycle === 0;
   const isStreetARed = cycle === 2;
-  const isStreetAYellow = cycle === 1 || cycle === 3;
+  const isStreetAYellow = cycle === 1;
 
   const isStreetBGreen = cycle === 2;
   const isStreetBRed = cycle === 0;
-  const isStreetBYellow = cycle === 1 || cycle === 3;
+  const isStreetBYellow = cycle === 1;
 
     return (  
         <>
