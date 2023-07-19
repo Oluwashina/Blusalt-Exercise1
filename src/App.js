@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCycle((cycle) => (cycle + 1) % 3);
-    }, cycle === 0 ? 10000 : 5000);
+    }, cycle === 1 ? 5000 : 10000);
 
     return () => clearInterval(interval);
   }, [cycle]);
